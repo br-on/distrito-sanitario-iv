@@ -1,0 +1,7 @@
+{
+  "/api/vacations/route": "app/api/vacations/route.js",
+  "/login/page": "app/login/page.js",
+  "/apps/producao/page": "app/apps/producao/page.js",
+  "/page": "app/page.js",
+  "/apps/ferias/page": "app/apps/ferias/page.js"
+}

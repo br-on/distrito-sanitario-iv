@@ -1,0 +1,6 @@
+.env.local
+/node_modules
+.history
+INSTRUCOES_DEPLOY.md
+README.md
+todo.md

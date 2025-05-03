@@ -1,0 +1,28 @@
+{
+  "node": {
+    "0040e22b8d9170edfb434e10b51419b0d0d20eadea": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.1.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CBruno%20Gama%5C%5CDesktop%5C%5CDEVE%5C%5Csistema-web-ds4%5C%5Csrc%5C%5Capp%5C%5Ccounter.ts%22%2C%5B%5B%220040e22b8d9170edfb434e10b51419b0d0d20eadea%22%2C%22incrementAndLog%22%5D%2C%5B%220088c19abd271037be2a204a646f06951575a16e5d%22%2C%22getStats%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "0088c19abd271037be2a204a646f06951575a16e5d": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.1.4_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CBruno%20Gama%5C%5CDesktop%5C%5CDEVE%5C%5Csistema-web-ds4%5C%5Csrc%5C%5Capp%5C%5Ccounter.ts%22%2C%5B%5B%220040e22b8d9170edfb434e10b51419b0d0d20eadea%22%2C%22incrementAndLog%22%5D%2C%5B%220088c19abd271037be2a204a646f06951575a16e5d%22%2C%22getStats%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "pV6P1CWLp8rJqi8gBINC9uVV+CYxaYpI3lg6Sv73xic="
+}

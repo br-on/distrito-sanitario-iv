@@ -1,5 +1,5 @@
 "use client";
-
+import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -76,6 +76,9 @@ export default function AppsPage() {
 
   return (
     <div>
+      <Link href="/">
+      <Button variant="secondary"> Voltar </Button>
+      </Link> <br /><br />
       <h2>Área de Aplicativos</h2>
       {accessibleApps.length > 0 ? (
         <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -92,7 +95,7 @@ export default function AppsPage() {
       )}
       {/* Link to profile page */} 
       <div style={{marginTop: "20px"}}>
-        <Link href="/profile">Editar meu Perfil</Link>
+
       </div>
     </div>
   );

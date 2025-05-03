@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -30,23 +31,30 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center p-8 sm:p-24">
-      <Card className="p-6 sm:p-8 w-full max-w-sm">
-        <p className="text-2xl font-medium text-center mb-4">Views: {optimisticStats.count}</p>
-        <div className="flex justify-center mb-4">
-          <Button onClick={handleClick}>
-            <Plus className="h-4 w-4 mr-2" />
-            Increment
+    <main className="p-6 flex flex-col items-center space-y-6">
+    <Card className="w-full max-w-md p-6 shadow-xl flex flex-col min-h-[220px]">
+      <h2 className="text-2xl font-semibold mb-2">Informações do Perfil</h2>
+      <p><strong>Nome:</strong> Bruno Gama</p>
+      <p><strong>Cargo:</strong> <span style={{ color: 'red' }}>Administrador do sistema</span></p>
+      <p><strong>Unidade de saúde:</strong> USF+ CARANGUEJO</p>
+      <p><strong>Equipe:</strong> ESF Caranguejo I</p>
+      <div className="mt-auto flex justify-end pt-4">
+        <Link href="/profile">
+          <Button variant="secondary">
+            Editar Perfil
           </Button>
-        </div>
-        <ScrollArea className="h-[100px]">
-          {optimisticStats.recentAccess.map((log, i) => (
-            <div key={i} className="text-sm text-muted-foreground text-center">
-              {new Date(log.accessed_at).toLocaleString()}
-            </div>
-          ))}
-        </ScrollArea>
-      </Card>
-    </main>
+        </Link>
+      </div>
+    </Card>
+
+    <div className="flex space-x-4">
+      <Link rel="import" href="/apps">
+        <Button variant="default" className="flex items-center gap-2">
+          <Plus size={16} /> Hub de Aplicativos
+        </Button>
+      </Link>
+      
+    </div>
+  </main>
   )
 }

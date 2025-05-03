@@ -1,7 +1,8 @@
 "use client";
-
+import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link'
 
 export default function ProfilePage() {
   const [profile, setProfile] = useState(null);
@@ -122,13 +123,17 @@ export default function ProfilePage() {
 
   return (
     <div style={{ maxWidth: '700px', margin: '20px auto' }}>
-      <h2>Meu Perfil</h2>
+      <Link href="/">
+      <Button variant="secondary">  
+        Voltar </Button>
+      </Link>
+      <center><h1>Meu Perfil</h1></center>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>{success}</p>}
+      {success && <p style={{ color: 'black' }}>{success}</p>}
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         {Object.keys(fieldLabels).map((key) => (
           <div key={key}>
-            <label htmlFor={key} style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
+            <label htmlFor={key} style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color:'black' }}>
               {fieldLabels[key]}:
             </label>
             <input
@@ -137,7 +142,7 @@ export default function ProfilePage() {
               name={key}
               value={profile[key] || ''} // Handle null/undefined values
               onChange={handleChange}
-              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: 'blue' }}
               // Disable cargo field for now, assuming it's set by admin?
               // Or add logic based on user role if needed
               disabled={key === 'cargo'} 

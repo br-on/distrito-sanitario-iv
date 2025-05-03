@@ -213,7 +213,8 @@ const tableHeaderStyle = {
   borderBottom: '2px solid #ddd',
   padding: '10px',
   textAlign: 'left',
-  backgroundColor: '#f9f9f9'
+  backgroundColor: '#f9f9f9',
+  color: 'black'
 };
 
 const tableCellStyle = {

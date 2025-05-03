@@ -16,20 +16,26 @@ export default function LoginPage() {
     setLoading(true);
     setError(null);
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
       });
-      if (error) throw error;
-      // Redirect to a protected page or dashboard after successful login
-      router.push('/'); // Redirect to home for now
-      router.refresh(); // Refresh server components
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message);
+      }
+  
+      router.push('/');
+      router.refresh(); // Garante que as server components recarreguem com sessão
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>

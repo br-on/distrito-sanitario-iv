@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 
 // Helper function to get the start date (Monday) of the week for a given date
 function getWeekStartDate(date) {
@@ -110,7 +112,12 @@ export default function ProducaoPage() {
   const canShowForm = !error || !error.includes('Acesso não autorizado');
 
   return (
-    <div style={{ maxWidth: '800px', margin: '20px auto' }}>
+    <div className="bg-brand-100 text-brand-400" style={{ maxWidth: '800px', margin: '20px auto' }}>
+
+      <Link href="/apps">
+              <Button variant="secondary">  
+                Voltar </Button>
+            </Link>
       <h2>Minha Produção Semanal</h2>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}

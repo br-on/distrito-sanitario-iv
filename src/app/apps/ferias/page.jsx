@@ -1,6 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
+import { Radius } from "lucide-react";
 
 export default function FeriasPage() {
   const [startDate, setStartDate] = useState('');
@@ -87,7 +90,13 @@ export default function FeriasPage() {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '20px auto' }}>
+    <div className="bg-brand-100 text-brand-400" style={{ maxWidth: '800px', margin: '20px auto'}}>
+
+      <Link href="/apps">
+        <Button variant="secondary">  
+          Voltar </Button>
+      </Link>
+
       <h2>Minhas Férias</h2>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}

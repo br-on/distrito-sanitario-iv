@@ -10,7 +10,7 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			background: 'gray',
+  			background: '#D6E8EE',
   			foreground: 'hsl(var(--foreground))',
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',
@@ -59,7 +59,14 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			brand: {
+				50: '#D6E8EE',
+				100: '#97CADB',
+				200: '#018ABE',
+				300: '#02457A',
+				400: '#001B48',
+			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

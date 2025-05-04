@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { FaUmbrellaBeach, FaClipboardList } from 'react-icons/fa'; // Importando os ícones
+
 
 export default function AppsPage() {
   const [profile, setProfile] = useState(null);
@@ -60,11 +62,13 @@ export default function AppsPage() {
       name: 'Minhas Férias',
       path: '/apps/ferias',
       allowedTypes: ['all'], // Accessible to everyone
+      icon: <FaUmbrellaBeach />
     },
     {
       name: 'Minha Produção',
       path: '/apps/producao',
       allowedTypes: ['Agente Comunitário de Saúde'], // Specific type
+      icon: <FaClipboardList />
     },
     // Add more apps here as needed
   ];
@@ -77,26 +81,45 @@ export default function AppsPage() {
   return (
     <div>
       <Link href="/">
-      <Button variant="secondary"> Voltar </Button>
-      </Link> <br /><br />
-      <h2>Área de Aplicativos</h2>
+        <Button variant="secondary"> Voltar </Button>
+      </Link>
+      <br /><br />
+      <h2 className="text-brand-400">Hub de Aplicativos</h2>
       {accessibleApps.length > 0 ? (
         <ul style={{ listStyle: 'none', padding: 0 }}>
-          {accessibleApps.map(app => (
-            <li key={app.path} style={{ marginBottom: '10px' }}>
-              <Link href={app.path} style={{ textDecoration: 'none', color: 'blue', padding: '10px', border: '1px solid #ccc', display: 'block', borderRadius: '4px' }}>
-                {app.name}
-              </Link>
-            </li>
-          ))}
+          {accessibleApps.map(app => {
+            // Encontrar o ícone correspondente ao aplicativo
+            const userApp = apps.find(application => application.name === app.name);
+  
+            return (
+              <li key={app.path} style={{ marginBottom: '10px' }}>
+                <Link
+                  href={app.path}
+                  className="block w-full p-4 rounded-xl border border-border bg-brand-100 text-brand-400 hover:bg-brand-400 hover:text-brand-50 transition-colors shadow-sm"
+                >
+                  <span
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'flex-start',  // Alinha os itens à esquerda
+                      alignItems: 'center',          // Alinha verticalmente
+                    }}
+                  >
+                    {userApp && (
+                      <span style={{ marginRight: '10px', fontSize: '20px' }}>
+                        {userApp.icon} {/* Ícone à esquerda e um pouco maior */}
+                      </span>
+                    )}
+                    <span>{app.name}</span>
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       ) : (
         <p>Nenhum aplicativo disponível para o seu tipo de usuário ({userType}).</p>
       )}
-      {/* Link to profile page */} 
-      <div style={{marginTop: "20px"}}>
-
-      </div>
+      <div style={{ marginTop: '20px' }}></div>
     </div>
   );
 }

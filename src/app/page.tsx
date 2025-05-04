@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { CardTitle } from '@/components/ui/card'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Plus } from 'lucide-react'
 import { useEffect, useOptimistic, useState, useTransition } from 'react'
@@ -32,24 +33,26 @@ export default function Home() {
 
   return (
     <main className="p-6 flex flex-col items-center space-y-6">
-    <Card className="w-full max-w-md p-6 shadow-xl flex flex-col min-h-[220px]">
-      <h2 className="text-2xl font-semibold mb-2">Informações do Perfil</h2>
-      <p><strong>Nome:</strong> Bruno Gama</p>
-      <p><strong>Cargo:</strong> <span style={{ color: 'red' }}>Administrador do sistema</span></p>
-      <p><strong>Unidade de saúde:</strong> USF+ CARANGUEJO</p>
-      <p><strong>Equipe:</strong> ESF Caranguejo I</p>
-      <div className="mt-auto flex justify-end pt-4">
-        <Link href="/profile">
-          <Button variant="secondary">
-            Editar Perfil
-          </Button>
-        </Link>
-      </div>
+    <Card className="w-full max-w-md p-6 shadow-xl flex flex-col min-h-[220px] bg-brand-300">
+      <CardTitle className="text-2xl font-semibold mb-5 text-brand-50">
+        Informações do Perfil
+      </CardTitle>
+        <p><strong>Nome:</strong> Bruno Gama</p>
+        <p><strong>Cargo:</strong> <span style={{ color: 'red' }}>Administrador do sistema</span></p>
+        <p><strong>Unidade de saúde:</strong> USF+ CARANGUEJO</p>
+        <p><strong>Equipe:</strong> ESF Caranguejo I</p>
+        <div className="mt-auto flex justify-end pt-4">
+          <Link href="/profile">
+            <Button variant="secondary">
+              Editar Perfil
+            </Button>
+          </Link>
+        </div>
     </Card>
 
     <div className="flex space-x-4">
       <Link rel="import" href="/apps">
-        <Button variant="default" className="flex items-center gap-2">
+        <Button variant="default" className="flex items-center gap-2 bg-brand-200">
           <Plus size={16} /> Hub de Aplicativos
         </Button>
       </Link>

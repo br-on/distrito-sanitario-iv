@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{ background: 'black' }}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
         <AuthStatus /> {/* Add AuthStatus component here */}
         <main style={{ padding: '20px' }}> {/* Add some padding for content */}
           {children}

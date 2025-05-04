@@ -140,6 +140,9 @@ importers:
       react-hook-form:
         specifier: ^7.54.2
         version: 7.55.0(react@19.1.0)
+      react-icons:
+        specifier: ^4.0.0
+        version: 4.0.0(react@19.1.0)
       react-resizable-panels:
         specifier: ^2.1.7
         version: 2.1.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4076,6 +4079,11 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
+
+  react-icons@4.0.0:
+    resolution: {integrity: sha512-HNS9Bsi73SImFZjwBAuaDIPfSqjLzDNZAN3PSjhZ7+7XJSCjkgFuzaMnyZetZXyawKwyoIPwmvGMSeFsEfsCPg==}
+    peerDependencies:
+      react: '*'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -9531,6 +9539,10 @@ snapshots:
       scheduler: 0.26.0
 
   react-hook-form@7.55.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+
+  react-icons@4.0.0(react@19.1.0):
     dependencies:
       react: 19.1.0
 

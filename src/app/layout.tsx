@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Sistema Web',
-  description: 'Sistema Web com Supabase e Next.js'
+  title: 'DS IV',
+  description: 'Distrito Sanitário IV - Recife'
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-        <AuthStatus /> {/* Add AuthStatus component here */}
+        <h2 className='text-brand-400 font-bold'>Distrito Sanitário IV</h2> {/* Add AuthStatus component here */}
         <main style={{ padding: '20px' }}> {/* Add some padding for content */}
           {children}
         </main>

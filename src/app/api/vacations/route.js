@@ -4,12 +4,10 @@ import { cookies } from 'next/headers'; // Mantenha esta importação
 
 // GET: Fetch vacation history for the logged-in user
 export async function GET(request) {
-  console.log("--- GET /api/vacations --- START ---"); // Log 1
   const cookieStore = await cookies(); // Obtenha o cookieStore aqui
 
   // Log para ver se o cookie do Supabase está presente
   const authToken = cookieStore.get("sb-rveslwkklqnrkupfvjlp-auth-token")?.value;
-  console.log("Auth Token Cookie:", authToken ? "Presente" : "Ausente"); // Log 2
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -34,7 +32,6 @@ export async function GET(request) {
   );
 
   try {
-    console.log("Tentando obter sessão..."); // Log 3
     const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
     if (sessionError) {
@@ -44,11 +41,9 @@ export async function GET(request) {
     }
 
     if (!session) {
-      console.log("Sessão NÃO encontrada pela API."); // Log 5
       return NextResponse.json({ error: 'Usuário não autenticado' }, { status: 401 });
     }
 
-    console.log("Sessão encontrada! User ID:", session.user.id); // Log 6
     const userId = session.user.id;
 
     // Fetch vacations ordered by creation date (newest first)
@@ -66,11 +61,9 @@ export async function GET(request) {
     return NextResponse.json(vacations || []); // Return empty array if no vacations found
 
   } catch (error) {
-    console.error("Erro inesperado no GET:", error); // Log 7
     console.error('Unexpected GET Error:', error);
     return NextResponse.json({ error: 'Erro inesperado no servidor ao buscar férias', details: error.message }, { status: 500 });
   }
-  console.log("--- GET /api/vacations --- END ---"); // Log 8
 }
 
 // POST: Create a new vacation request

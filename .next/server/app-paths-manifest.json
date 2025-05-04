@@ -1,7 +1,8 @@
 {
-  "/api/profile/route": "app/api/profile/route.js",
-  "/api/vacations/route": "app/api/vacations/route.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/profile/route": "app/api/profile/route.js",
+  "/profile/page": "app/profile/page.js",
   "/apps/page": "app/apps/page.js",
-  "/apps/ferias/page": "app/apps/ferias/page.js"
+  "/page": "app/page.js"
 }

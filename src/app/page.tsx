@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main className="p-6 flex flex-col items-center space-y-6">
-    <Card className="w-full max-w-md p-6 shadow-xl flex flex-col min-h-[220px] bg-brand-300">
+    <Card className="w-full max-w-md p-6 shadow-xl flex flex-col min-h-[220px] bg-brand-300 bg-opacity-80">
       <CardTitle className="text-2xl font-semibold mb-5 text-brand-50">
         Informações do Perfil
       </CardTitle>

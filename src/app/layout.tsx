@@ -25,13 +25,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-        <h2 className='text-brand-400 font-bold'>Distrito Sanitário IV</h2> {/* Add AuthStatus component here */}
-        <main style={{ padding: '20px' }}> {/* Add some padding for content */}
-          {children}
-        </main>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="relative w-full min-h-screen overflow-hidden">
+          {/* Vídeo como fundo */}
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/videos/background.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeo em HTML5.
+          </video>
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-0" />
+
+          {/* Conteúdo acima do vídeo */}
+          <div className="relative z-10">
+            <h2 className="text-brand-50 font-bold p-4">Distrito Sanitário IV</h2>
+            <main className="p-6">
+              {children}
+            </main>
+          </div>
+        </div>
       </body>
     </html>
   );
 }
+
 
